@@ -1,6 +1,6 @@
 /*!
  * pixi-spine - v4.0.4
- * Compiled Mon, 31 Jul 2023 22:49:17 UTC
+ * Compiled Tue, 01 Aug 2023 16:17:47 UTC
  *
  * pixi-spine is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
