@@ -33,10 +33,10 @@ common/autoinstallers/*/.npmrc
 compile
 
 # packages ignore
-lib
-dist
-bundles/*/index.d.ts
-packages/*/index.d.ts
+# lib
+# dist
+# bundles/*/index.d.ts
+# packages/*/index.d.ts
 
 # ignore the npmrc
 .npmrc
