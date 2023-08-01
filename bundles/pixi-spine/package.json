@@ -1,7 +1,7 @@
 {
   "name": "pixi-spine",
   "version": "4.0.4",
-  "description": "Pixi integration with EsotericSoftware Spine, big, contains all runtimes",
+  "description": "Marko pixi integration with EsotericSoftware Spine, big, contains all runtimes",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
   "types": "./index.d.ts",
