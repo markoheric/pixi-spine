@@ -130,9 +130,7 @@ export abstract class SpineBase<
         for (let i = 0, n = this.skeleton.slots.length; i < n; i++) {
             const slot = this.skeleton.slots[i];
             const attachment: any = slot.getAttachment();
-            const slotContainer = this.newContainer();
-
-            slotContainer.name = slot.data.name;
+            const slotContainer = this.newContainer(slot.data.name);
 
             this.slotContainers.push(slotContainer);
             this.addChild(slotContainer);
@@ -464,7 +462,7 @@ export abstract class SpineBase<
                 let c = this.tempClipContainers[i];
 
                 if (!c) {
-                    c = this.tempClipContainers[i] = this.newContainer();
+                    c = this.tempClipContainers[i] = this.newContainer("tempclip_" + i);
                     c.visible = false;
                 }
                 this.children[i] = c;
@@ -622,7 +620,7 @@ export abstract class SpineBase<
         graphics.drawPolygon(poly as any);
         graphics.renderable = false;
         slot.currentGraphics = graphics;
-        slot.clippingContainer = this.newContainer();
+        slot.clippingContainer = this.newContainer("slotclip_" + clip.name);
         slot.clippingContainer.mask = slot.currentGraphics;
 
         return graphics;
@@ -751,8 +749,10 @@ export abstract class SpineBase<
     }
 
     // those methods can be overriden to spawn different classes
-    newContainer() {
-        return new Container();
+    newContainer(name: string) {
+        let container = new Container();
+        container.name = name;
+        return container;
     }
 
     newSprite(tex: Texture) {
